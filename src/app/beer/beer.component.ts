@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BeerService } from "../beer.service";
 
 @Component({
   moduleId: module.id,
@@ -9,7 +10,13 @@ import { Component } from '@angular/core';
 export class BeerComponent {
   beerName: String;
 
-  onClick() {
-    console.log(this.beerName);
+  constructor(public beerService : BeerService) {
+  }
+
+  addBeer() {
+    if(this.beerName) {
+      this.beerService.beers.push(this.beerName);
+      this.beerName = '';
+    }
   }
 }

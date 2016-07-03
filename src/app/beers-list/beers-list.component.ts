@@ -1,3 +1,4 @@
+import {BeerService} from "../beer.service";
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['beers-list.component.css']
 })
 export class BeersListComponent {
-  beers: Array<String> = ['Rochefort 10', 'Bush Ambrée'];
+
+  constructor(public beerService: BeerService){
+
+  }
 }
